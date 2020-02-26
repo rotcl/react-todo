@@ -1,0 +1,231 @@
+body.dark-mode {
+	--bg: #090b0f;
+	--list-bg: #1a1c25;
+	--text: #fff;
+	--date: rgb(135, 153, 167);
+	--btn-icon-hover: #fff;
+
+	--dark-bg: '';
+	--dark-shadow: rgba(28, 28, 28, 0.8) 0px 0px 0px 2000px inset;
+}
+body.light-mode {
+	--bg: #fffaf4;
+	--list-bg: #fff;
+	--text: #212121;
+	--date: #35305a;
+	--btn-icon-hover: #2d3748;
+
+	--dark-bg: '';
+	--dark-shadow: rgba(255, 255, 255, 0.95) 0px 0px 0px 2000px inset;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: var(--bg);
+	color: var(--text);
+	font-family: 'Quicksand', sans-serif;
+	scroll-behavior: smooth;
+
+	/* box-shadow: var(--dark-shadow); */
+	/* background: var(--dark-bg) no-repeat; */
+	background-size: cover;
+}
+
+ul {
+	padding: 0;
+}
+a {
+	color: var(--text);
+}
+li {
+	list-style-type: none;
+	border-radius: 5px;
+	background: var(--list-bg);
+	padding: 0.5rem;
+	font-size: 14px;
+	margin-top: 3px;
+	display: flex;
+	justify-content: space-between;
+}
+
+button {
+	outline: 0;
+	background: transparent;
+	border: 0px;
+	cursor: pointer;
+	color: #a0aec0;
+}
+
+button:focus {
+	outline: 0;
+}
+button:hover {
+	color: var(--btn-icon-hover);
+}
+
+li .actions {
+	display: none;
+}
+
+li:hover .actions {
+	display: block;
+}
+
+.App {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+}
+
+.center img {
+	padding: 0 10px;
+}
+
+.list input[type='text'] {
+	border: 0px;
+	background: transparent;
+	width: 500px;
+	font-size: 12px;
+	color: var(--text);
+	padding: 0.3rem;
+}
+
+.completed input[type='text'] {
+	text-decoration: line-through;
+}
+
+.list input[type='text']:focus {
+	outline: 0;
+}
+
+.date-todo .new-list {
+	visibility: hidden;
+}
+.date-todo:hover .new-list {
+	visibility: visible;
+}
+.new-list {
+	display: flex;
+	justify-content: center;
+}
+
+.planner {
+	display: flex;
+	justify-content: center;
+	margin: 60px;
+}
+
+.plan-days {
+	border: 0;
+	background: transparent;
+	border-bottom: 4px dotted #333;
+	outline: 0;
+	margin: 0 10px;
+	text-align: center;
+	width: 50px;
+	color: var(--date);
+}
+
+.add-circle {
+	padding: 0px 10px;
+	cursor: pointer;
+}
+
+.add-circle:hover {
+	color: #777;
+}
+.completed {
+	text-decoration: line-through;
+}
+
+.options {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.options a {
+	padding: 0 10px;
+	color: var(--text);
+}
+
+.todo-lists {
+	width: 600px;
+}
+
+.date-style {
+	color: var(--date);
+	font-size: 16px;
+	font-weight: 800;
+	display: flex;
+	justify-content: space-between;
+}
+.date-todo .actions {
+	visibility: hidden;
+}
+
+.date-todo:hover .actions {
+	visibility: visible;
+}
+
+.empty-list {
+	display: flex;
+	justify-content: center;
+	font-size: 12px;
+	color: var(--date);
+}
+
+@media screen and (max-width: 600px) {
+	.todo-lists {
+		padding: 2rem;
+	}
+
+	.list input[type='text'] {
+		width: unset;
+	}
+
+	.planner {
+		margin: 60px 0;
+	}
+	.date-style {
+		font-size: 14px;
+	}
+
+	.options a {
+		display: none;
+	}
+
+	.date-todo .new-list {
+		visibility: visible;
+	}
+
+	li .actions {
+		display: block;
+	}
+
+	.list input[type='text'] {
+		font-size: 12px;
+	}
+
+	li div:nth-child(1) {
+		display: flex;
+	}
+
+	.center {
+		display: inline;
+	}
+
+	.date-todo .actions {
+		visibility: visible;
+	}
+
+	.App {
+		margin-top: unset;
+	}
+}
